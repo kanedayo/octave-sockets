@@ -19,6 +19,7 @@ unwind_protect
     data = qammod(mod(0:LEN-1,2^Qm),2^Qm) + 0.5*[1 1j]*randn(2,LEN);
     tx_data = typecast( data , 'uint8' );
     tx_data(1:10) % debug_print
+    fflush(stdout);
   
     send( send_sck, tx_data );
   
